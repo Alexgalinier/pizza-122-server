@@ -8,15 +8,20 @@
   "main": "gindex.js",
   "author": "Alexgalinier",
   "scripts": {
-    "build-js": "babel src --out-dir build --ignore **/*.test.js --source-maps inline --copy-files",
-    "watch-js": "babel src --watch --out-dir build --ignore **/*.test.js  --source-maps inline --copy-files",
+    "build-js":
+      "babel src --out-dir build --ignore **/*.test.js --source-maps inline --copy-files",
+    "watch-js":
+      "babel src --watch --out-dir build --ignore **/*.test.js  --source-maps inline --copy-files",
     "watch-server": "nodemon --watch build build/index.js",
     "start": "SECRET=a run-p watch-js watch-server",
     "prestart-local-prod": "npm run build-js",
-    "start-local-prod": "NODE_ENV=production HTTP_HEADER_ORIGIN=* SECRET=a node build/index.js",
+    "start-local-prod":
+      "NODE_ENV=production HTTP_HEADER_ORIGIN=* SECRET=a node build/index.js",
     "test": "jest",
     "preprod": "npm run test; npm run build-js",
-    "prod": "node build/index.js"
+    "prod": "node build/index.js",
+    "predeploy": "npm run test",
+    "deploy": "git push heroku master"
   },
   "dependencies": {
     "bcrypt": "^2.0.0",
@@ -28,27 +33,22 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.44",
-    "@babel/core": "^7.0.0-beta.44",
+    "@babel/core": "^7.0.0-beta.46",
     "@babel/plugin-proposal-export-default-from": "^7.0.0-beta.44",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.44",
     "@babel/preset-env": "^7.0.0-beta.44",
     "a_codestyle": "^3.0.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^22.4.3",
     "cz-conventional-changelog": "^2.1.0",
     "jest": "^21.2.1",
     "nodemon": "^1.17.3",
-    "npm-run-all": "^4.1.2",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^22.4.3"
+    "npm-run-all": "^4.1.2"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Alexgalinier/pizza-122"
   },
-  "keywords": [
-    "pizza",
-    "local",
-    "fresh",
-    "backend"
-  ],
+  "keywords": ["pizza", "local", "fresh", "backend"],
   "license": "MIT"
 }
