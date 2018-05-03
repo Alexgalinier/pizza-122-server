@@ -18,7 +18,7 @@
     "start-local-prod":
       "NODE_ENV=production HTTP_HEADER_ORIGIN=* SECRET=a node build/index.js",
     "test": "jest",
-    "preprod": "npm run test; npm run build-js",
+    "preprod": "npm run build-js",
     "prod": "node build/index.js",
     "predeploy": "npm run test",
     "deploy": "git push heroku master"
