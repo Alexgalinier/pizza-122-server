@@ -8,15 +8,12 @@
   "main": "gindex.js",
   "author": "Alexgalinier",
   "scripts": {
-    "build-js":
-      "babel src --out-dir build --ignore **/*.test.js --source-maps inline --copy-files",
-    "watch-js":
-      "babel src --watch --out-dir build --ignore **/*.test.js  --source-maps inline --copy-files",
+    "build-js": "babel src --out-dir build --ignore **/*.test.js --source-maps inline --copy-files",
+    "watch-js": "babel src --watch --out-dir build --ignore **/*.test.js  --source-maps inline --copy-files",
     "watch-server": "nodemon --watch build build/index.js",
     "start": "SECRET=a run-p watch-js watch-server",
     "prestart-local-prod": "npm run build-js",
-    "start-local-prod":
-      "NODE_ENV=production HTTP_HEADER_ORIGIN=* SECRET=a node build/index.js",
+    "start-local-prod": "NODE_ENV=production HTTP_HEADER_ORIGIN=* SECRET=a node build/index.js",
     "test": "jest",
     "preprod": "npm run test; npm run build-js",
     "prod": "node build/index.js"
@@ -47,6 +44,11 @@
     "type": "git",
     "url": "https://github.com/Alexgalinier/pizza-122"
   },
-  "keywords": ["pizza", "local", "fresh", "backend"],
+  "keywords": [
+    "pizza",
+    "local",
+    "fresh",
+    "backend"
+  ],
   "license": "MIT"
 }
