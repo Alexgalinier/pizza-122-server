@@ -7,6 +7,13 @@ export default ({ all, get, post, put, _delete, config }) => {
     const result = await config.db.find('orders', 'owner', req.authData._id);
     result ? res.send(result) : res.error(404);
   });
+  post('orders', async (req, res) => {
+    const result = await config.db.insert('orders', 'owner', {
+      owner: req.authData._id,
+      data: req.data
+    });
+    result ? res.send(result, 201) : res.error(404);
+  });
   /* post('finances', async (req, res) => {
     const result = await config.db.insert('finances', {
       owner: req.authData._id,

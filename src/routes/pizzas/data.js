@@ -7,7 +7,7 @@ export const pizzas = [
       N: 15,
       B: 18
     },
-    ingrdients: ['emmental', 'tomates', 'jambon']
+    ingredients: ['Emmental', 'Tomates', 'Jambon']
   },
   {
     name: 'Lalilala',
@@ -17,6 +17,6 @@ export const pizzas = [
       N: 16,
       B: 19
     },
-    ingrdients: ['emmental', 'tomates', 'jambon', 'champignons']
+    ingredients: ['Emmental', 'Tomates', 'Jambon', 'Champignons']
   }
 ];

@@ -1,12 +1,14 @@
 import fs from 'fs-extra';
 import { pizzas } from './data';
 
-export default ({ get, config }) => {
+export default async ({ get, config }) => {
   get('pizzas', async (req, res) => {
-    const result = await config.db.find('pizzas');
+    const result = await config.db.getAll('pizzas');
 
     if (!result) {
-      pizzas.forEach(async _ => await config.db.insert('pizzas', _));
+      await Promise.all(
+        pizzas.map(async _ => await config.db.insert('pizzas', _))
+      );
       return res.send(pizzas);
     }
 
