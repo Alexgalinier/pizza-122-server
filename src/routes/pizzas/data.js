@@ -1,7 +1,7 @@
 export const pizzas = [
   {
     name: 'Margarita',
-    image: 'http://localhost:3000/images/pizza1.png',
+    image: 'https://pizza-122.herokuapp.com/images/pizza1.png',
     price: {
       S: 12,
       N: 15,
@@ -11,7 +11,7 @@ export const pizzas = [
   },
   {
     name: 'Lalilala',
-    image: 'http://localhost:3000/images/pizza2.png',
+    image: 'https://pizza-122.herokuapp.com/images/pizza2.png',
     price: {
       S: 13,
       N: 16,
