@@ -5,7 +5,7 @@ export default async ({ get, config }) => {
   get('pizzas', async (req, res) => {
     const result = await config.db.getAll('pizzas');
 
-    if (!result) {
+    if (!result || result.length === 0) {
       await Promise.all(
         pizzas.map(async _ => await config.db.insert('pizzas', _))
       );
